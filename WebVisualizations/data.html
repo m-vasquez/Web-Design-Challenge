@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Design</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+                       
+<!-- Set up navigation bar for each page-->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand text-white" href="index.html">Crime Analysis </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Plots
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="Bar_prop.html">Property Crime by State</a>
+                  <a class="dropdown-item" href="Bar_vio.html">Violent Crime by State</a>
+                  <a class="dropdown-item" href="Pie_prop.html">Property Crime by Party</a>
+                  <a class="dropdown-item" href="Pie_vio.html">Violent Crime by Party</a>
+                  <a class="dropdown-item" href="Scatter_crime.html">Property Crime vs. Violent Crime</a>
+                  <a class="dropdown-item" href="Scatter_prop.html">Unemployment vs. Property Crime</a>
+                  <a class="dropdown-item" href="Scatter_vio.html">Unemployment vs. Violent Crime</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="Resources/mapfile.html">Data by State</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="comparisons.html">Comparisions <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Resources/mapfile.html">State Observations</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data.html">Data</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+       <!-- container section for landing page- create overall grid-->
+       <div class="container_background_gray">
+              <h1 class="title">Data and Definitions</h1>
+              <hr>
+              <p>
+                  The following table includes all of the data used for plotting during this project. 
+              </p>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>State</th>
+                    <th>State Abbrev.</th>
+                    <th>Affiliated Party Color</th>
+                    <th>Population</th>
+                    <th>Violent Crime per 100,000 inhabitants</th>
+                    <th>Property Crime per 100,000 inhabitants</th>
+                    <th>Hate Crime per 100,000 inhabitants</th>
+                    <th>Unemployment (UE) Rate</th>
+                    <th>UE Rank among States</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Alabama</td>
+                    <td>AL</td>
+                    <td>Red</td>
+                    <td>4887871.0</td>
+                    <td>519.6</td>
+                    <td>2817.2</td>
+                    <td>0.000</td>
+                    <td>3.9</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>Alaska</td>
+                    <td>AK</td>
+                    <td>Red</td>
+                    <td>737438.0</td>
+                    <td>885.0</td>
+                    <td>3300.5</td>
+                    <td>0.954</td>
+                    <td>6.5</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Arizona</td>
+                    <td>AZ</td>
+                    <td>Red</td>
+                    <td>7171646.0</td>
+                    <td>474.9</td>
+                    <td>2676.8</td>
+                    <td>2.326</td>
+                    <td>4.7</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Arkansas</td>
+                    <td>AR</td>
+                    <td>Red</td>
+                    <td>3013825.0</td>
+                    <td>543.6</td>
+                    <td>2913.0</td>
+                    <td>0.452</td>
+                    <td>3.6</td>
+                    <td>29</td>
+                  </tr>
+                  <tr>
+                    <td>California</td>
+                    <td>CA</td>
+                    <td>Blue</td>
+                    <td>39557045.0</td>
+                    <td>447.4</td>
+                    <td>2380.4</td>
+                    <td>2.690</td>
+                    <td>4.3</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Colorado</td>
+                    <td>CO</td>
+                    <td>Purple</td>
+                    <td>5695564.0</td>
+                    <td>397.2</td>
+                    <td>2671.6</td>
+                    <td>2.195</td>
+                    <td>3.2</td>
+                    <td>38</td>
+                  </tr>
+                  <tr>
+                    <td>Connecticut</td>
+                    <td>CT</td>
+                    <td>Blue</td>
+                    <td>3572665.0</td>
+                    <td>207.4</td>
+                    <td>1681.0</td>
+                    <td>2.571</td>
+                    <td>4.1</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>Delaware</td>
+                    <td>DE</td>
+                    <td>Blue</td>
+                    <td>967171.0</td>
+                    <td>423.6</td>
+                    <td>2324.4</td>
+                    <td>1.662</td>
+                    <td>3.8</td>
+                    <td>26</td>
+                  </tr>
+                  <tr>
+                    <td>Florida</td>
+                    <td>FL</td>
+                    <td>Purple</td>
+                    <td>21299325.0</td>
+                    <td>384.9</td>
+                    <td>2281.8</td>
+                    <td>0.674</td>
+                    <td>3.6</td>
+                    <td>29</td>
+                  </tr>
+                  <tr>
+                    <td>Georgia</td>
+                    <td>GA</td>
+                    <td>Red</td>
+                    <td>10519475.0</td>
+                    <td>326.6</td>
+                    <td>2573.7</td>
+                    <td>0.412</td>
+                    <td>3.9</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>Hawaii</td>
+                    <td>HI</td>
+                    <td>Blue</td>
+                    <td>1420491.0</td>
+                    <td>248.6</td>
+                    <td>2870.3</td>
+                    <td>4.481</td>
+                    <td>2.5</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Idaho</td>
+                    <td>ID</td>
+                    <td>Red</td>
+                    <td>1754208.0</td>
+                    <td>227.1</td>
+                    <td>1461.4</td>
+                    <td>1.323</td>
+                    <td>2.9</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <td>Illinois</td>
+                    <td>IL</td>
+                    <td>Blue</td>
+                    <td>12741080.0</td>
+                    <td>404.1</td>
+                    <td>1932.8</td>
+                    <td>0.896</td>
+                    <td>4.3</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Indiana</td>
+                    <td>IN</td>
+                    <td>Red</td>
+                    <td>6691878.0</td>
+                    <td>382.3</td>
+                    <td>2179.3</td>
+                    <td>3.562</td>
+                    <td>3.5</td>
+                    <td>32</td>
+                  </tr>
+                  <tr>
+                    <td>Iowa</td>
+                    <td>IA</td>
+                    <td>Purple</td>
+                    <td>3156145.0</td>
+                    <td>250.1</td>
+                    <td>1691.5</td>
+                    <td>0.329</td>
+                    <td>2.6</td>
+                    <td>48</td>
+                  </tr>
+                  <tr>
+                    <td>Kansas</td>
+                    <td>KS</td>
+                    <td>Red</td>
+                    <td>2911505.0</td>
+                    <td>439.0</td>
+                    <td>2633.9</td>
+                    <td>2.694</td>
+                    <td>3.3</td>
+                    <td>35</td>
+                  </tr>
+                  <tr>
+                    <td>Kentucky</td>
+                    <td>KY</td>
+                    <td>Red</td>
+                    <td>4468402.0</td>
+                    <td>211.9</td>
+                    <td>1962.6</td>
+                    <td>5.283</td>
+                    <td>4.3</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>Louisiana</td>
+                    <td>LA</td>
+                    <td>Red</td>
+                    <td>4659978.0</td>
+                    <td>537.5</td>
+                    <td>3276.0</td>
+                    <td>1.275</td>
+                    <td>4.9</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Maine</td>
+                    <td>ME</td>
+                    <td>Blue</td>
+                    <td>1338404.0</td>
+                    <td>112.1</td>
+                    <td>1357.8</td>
+                    <td>1.494</td>
+                    <td>3.2</td>
+                    <td>38</td>
+                  </tr>
+                  <tr>
+                    <td>Maryland</td>
+                    <td>MD</td>
+                    <td>Blue</td>
+                    <td>6042718.0</td>
+                    <td>468.7</td>
+                    <td>2033.3</td>
+                    <td>0.811</td>
+                    <td>3.9</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>Massachusetts</td>
+                    <td>MA</td>
+                    <td>Blue</td>
+                    <td>6902149.0</td>
+                    <td>338.1</td>
+                    <td>1263.3</td>
+                    <td>5.230</td>
+                    <td>3.4</td>
+                    <td>34</td>
+                  </tr>
+                  <tr>
+                    <td>Michigan</td>
+                    <td>MI</td>
+                    <td>Purple</td>
+                    <td>9995915.0</td>
+                    <td>449.4</td>
+                    <td>1653.5</td>
+                    <td>4.333</td>
+                    <td>4.1</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>Minnesota</td>
+                    <td>MN</td>
+                    <td>Purple</td>
+                    <td>5611179.0</td>
+                    <td>220.4</td>
+                    <td>1993.8</td>
+                    <td>2.297</td>
+                    <td>2.9</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <td>Mississippi</td>
+                    <td>MS</td>
+                    <td>Red</td>
+                    <td>2986530.0</td>
+                    <td>234.4</td>
+                    <td>2403.0</td>
+                    <td>0.694</td>
+                    <td>4.8</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Missouri</td>
+                    <td>MO</td>
+                    <td>Red</td>
+                    <td>6126452.0</td>
+                    <td>502.1</td>
+                    <td>2647.1</td>
+                    <td>1.081</td>
+                    <td>3.2</td>
+                    <td>38</td>
+                  </tr>
+                  <tr>
+                    <td>Montana</td>
+                    <td>MT</td>
+                    <td>Red</td>
+                    <td>1062305.0</td>
+                    <td>374.1</td>
+                    <td>2496.3</td>
+                    <td>0.659</td>
+                    <td>3.6</td>
+                    <td>29</td>
+                  </tr>
+                  <tr>
+                    <td>Nebraska</td>
+                    <td>NE</td>
+                    <td>Red</td>
+                    <td>1929268.0</td>
+                    <td>284.8</td>
+                    <td>2079.9</td>
+                    <td>1.909</td>
+                    <td>2.9</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <td>Nevada</td>
+                    <td>NV</td>
+                    <td>Purple</td>
+                    <td>3034392.0</td>
+                    <td>541.1</td>
+                    <td>2438.2</td>
+                    <td>1.088</td>
+                    <td>4.4</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>New Hampshire</td>
+                    <td>NH</td>
+                    <td>Purple</td>
+                    <td>1356458.0</td>
+                    <td>173.2</td>
+                    <td>1248.5</td>
+                    <td>0.987</td>
+                    <td>2.6</td>
+                    <td>48</td>
+                  </tr>
+                  <tr>
+                    <td>New Jersey</td>
+                    <td>NJ</td>
+                    <td>Blue</td>
+                    <td>8908520.0</td>
+                    <td>208.1</td>
+                    <td>1404.9</td>
+                    <td>6.297</td>
+                    <td>4.1</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>New Mexico</td>
+                    <td>NM</td>
+                    <td>Blue</td>
+                    <td>2095428.0</td>
+                    <td>856.6</td>
+                    <td>3419.7</td>
+                    <td>1.462</td>
+                    <td>4.9</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>New York</td>
+                    <td>NY</td>
+                    <td>Blue</td>
+                    <td>19542209.0</td>
+                    <td>350.5</td>
+                    <td>1440.5</td>
+                    <td>2.703</td>
+                    <td>4.1</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>North Carolina</td>
+                    <td>NC</td>
+                    <td>Purple</td>
+                    <td>10383620.0</td>
+                    <td>377.6</td>
+                    <td>2494.1</td>
+                    <td>1.355</td>
+                    <td>4.0</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>North Dakota</td>
+                    <td>ND</td>
+                    <td>Red</td>
+                    <td>760077.0</td>
+                    <td>280.6</td>
+                    <td>2040.2</td>
+                    <td>1.315</td>
+                    <td>2.6</td>
+                    <td>48</td>
+                  </tr>
+                  <tr>
+                    <td>Ohio</td>
+                    <td>OH</td>
+                    <td>Purple</td>
+                    <td>11689442.0</td>
+                    <td>279.9</td>
+                    <td>2177.1</td>
+                    <td>3.581</td>
+                    <td>4.5</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>Oklahoma</td>
+                    <td>OK</td>
+                    <td>Red</td>
+                    <td>3943079.0</td>
+                    <td>466.1</td>
+                    <td>2875.0</td>
+                    <td>0.552</td>
+                    <td>3.4</td>
+                    <td>34</td>
+                  </tr>
+                  <tr>
+                    <td>Oregon</td>
+                    <td>OR</td>
+                    <td>Blue</td>
+                    <td>4190713.0</td>
+                    <td>285.5</td>
+                    <td>2894.0</td>
+                    <td>2.940</td>
+                    <td>4.1</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td>Pennsylvania</td>
+                    <td>PA</td>
+                    <td>Purple</td>
+                    <td>12807060.0</td>
+                    <td>306.0</td>
+                    <td>1489.9</td>
+                    <td>0.527</td>
+                    <td>4.2</td>
+                    <td>13</td>
+                  </tr>
+                  <tr>
+                    <td>Rhode Island</td>
+                    <td>RI</td>
+                    <td>Blue</td>
+                    <td>1057315.0</td>
+                    <td>219.1</td>
+                    <td>1660.9</td>
+                    <td>1.231</td>
+                    <td>4.0</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>South Carolina</td>
+                    <td>SC</td>
+                    <td>Red</td>
+                    <td>5084127.0</td>
+                    <td>488.3</td>
+                    <td>3017.6</td>
+                    <td>2.238</td>
+                    <td>3.5</td>
+                    <td>32</td>
+                  </tr>
+                  <tr>
+                    <td>South Dakota</td>
+                    <td>SD</td>
+                    <td>Red</td>
+                    <td>882235.0</td>
+                    <td>404.7</td>
+                    <td>1728.7</td>
+                    <td>2.480</td>
+                    <td>3.1</td>
+                    <td>39</td>
+                  </tr>
+                  <tr>
+                    <td>Tennessee</td>
+                    <td>TN</td>
+                    <td>Red</td>
+                    <td>6770010.0</td>
+                    <td>623.7</td>
+                    <td>2825.4</td>
+                    <td>2.523</td>
+                    <td>3.5</td>
+                    <td>32</td>
+                  </tr>
+                  <tr>
+                    <td>Texas</td>
+                    <td>TX</td>
+                    <td>Red</td>
+                    <td>28701845.0</td>
+                    <td>410.9</td>
+                    <td>2367.2</td>
+                    <td>1.634</td>
+                    <td>3.8</td>
+                    <td>26</td>
+                  </tr>
+                  <tr>
+                    <td>Utah</td>
+                    <td>UT</td>
+                    <td>Red</td>
+                    <td>3161105.0</td>
+                    <td>233.1</td>
+                    <td>2377.5</td>
+                    <td>1.075</td>
+                    <td>3.0</td>
+                    <td>42</td>
+                  </tr>
+                  <tr>
+                    <td>Vermont</td>
+                    <td>VT</td>
+                    <td>Blue</td>
+                    <td>626299.0</td>
+                    <td>172.0</td>
+                    <td>1283.1</td>
+                    <td>7.132</td>
+                    <td>2.5</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Virginia</td>
+                    <td>VA</td>
+                    <td>Purple</td>
+                    <td>8517685.0</td>
+                    <td>200.0</td>
+                    <td>1665.8</td>
+                    <td>1.680</td>
+                    <td>3.0</td>
+                    <td>42</td>
+                  </tr>
+                  <tr>
+                    <td>Washington</td>
+                    <td>WA</td>
+                    <td>Blue</td>
+                    <td>7535591.0</td>
+                    <td>311.5</td>
+                    <td>2946.2</td>
+                    <td>6.765</td>
+                    <td>4.5</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>West Virginia</td>
+                    <td>WV</td>
+                    <td>Red</td>
+                    <td>1805832.0</td>
+                    <td>289.9</td>
+                    <td>1485.6</td>
+                    <td>2.732</td>
+                    <td>5.2</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Wisconsin</td>
+                    <td>WI</td>
+                    <td>Purple</td>
+                    <td>5813568.0</td>
+                    <td>295.4</td>
+                    <td>1559.9</td>
+                    <td>0.902</td>
+                    <td>3.0</td>
+                    <td>42</td>
+                  </tr>
+                  <tr>
+                    <td>Wyoming</td>
+                    <td>WY</td>
+                    <td>Red</td>
+                    <td>577737.0</td>
+                    <td>212.2</td>
+                    <td>1785.1</td>
+                    <td>0.000</td>
+                    <td>3.9</td>
+                    <td>24</td>
+                  </tr>
+                </tbody>
+              </table>
+       </div>
+
+    <div class="footer text-center" style="margin-bottom:0">
+        <p>&copy; Copyright Marlene Vasquez 2020</p>
+    </div>
+</body>
+</html>
+    

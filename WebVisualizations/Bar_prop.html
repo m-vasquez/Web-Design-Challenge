@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Design</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   
+<!-- Set up navigation bar for each page-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand text-white" href="index.html">Crime Analysis </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Plots
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="Bar_prop.html">Property Crime by State</a>
+                  <a class="dropdown-item" href="Bar_vio.html">Violent Crime by State</a>
+                  <a class="dropdown-item" href="Pie_prop.html">Property Crime by Party</a>
+                  <a class="dropdown-item" href="Pie_vio.html">Violent Crime by Party</a>
+                  <a class="dropdown-item" href="Scatter_crime.html">Property Crime vs. Violent Crime</a>
+                  <a class="dropdown-item" href="Scatter_prop.html">Unemployment vs. Property Crime</a>
+                  <a class="dropdown-item" href="Scatter_vio.html">Unemployment vs. Violent Crime</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="Resources/mapfile.html">Data by State</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="comparisons.html">Comparisions <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Resources/mapfile.html">State Observations</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="data.html">Data</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- container section for bar graph-property- create overall grid-->
+      <div class="container_background_gray">
+          <div class="row">
+              <div class="col-lg-8 col-sm-12" style="background-color: whitesmoke;">
+                <div class="box" id="visual_box">
+                  <br>
+                    <h3 class="title" id="landing_title">Property Crime by State</h3>
+                    <hr>
+                    <img class="chart" src="Resources/assets/Bar_property_crime_in_50States.png" width=100% 
+                    alt="party affiliation by state">
+                    <p>
+                    The chart above allows us to see the states on a scale of sorts when it comes to property crime rate. You will
+                    note that although the state with the highest rate is a blue state- democratic leaning state - there is a 
+                    consistent gathering of red states- republican leaning - nearing the higher crime rate section of the chart. 
+                    Red states occupy 13 of the top 20 spots.
+                    </p>
+
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-12" style="background-color: whitesmoke;">
+              <div class="box">
+              <div class="container_background_gray">
+                <div class="row">
+                        <hr3 class="title" id="visual_title">Visualizations</hr3>
+                        <hr>
+                        <div class="col-8">
+                          <a href="Bar_prop.html">
+                            <img class="img-thumbnail active" src="Resources/assets/Bar_property_crime_in_50states.png" alt="Prop Crime bar chart">
+                          </a>
+                        </div>
+                        <div class="col-8">
+                          <a href="Bar_vio.html">
+                            <img class="img-thumbnail" src="Resources/assets/Bar_violent_crime_in_50states.png" alt="Vio Crime bar chart">
+                          </a>
+                        </div>
+                        <div class="col-6">
+                          <a href="Pie_prop.html">
+                            <img class="img-thumbnail" src="Resources/assets/Pie_state_party_propcrime.png" alt="Prop Crime pie chart">
+                          </a>
+                         </div>
+                        <div class="col-6">
+                          <a href="Pie_vio.html">
+                            <img class="img-thumbnail" src="Resources/assets/Pie_state_party_Violentcrime.png" alt="Vio Crime pie chart">
+                          </a>
+                        </div>
+                        <div class="col-6">
+                          <a href="Scatter_crime.html">
+                            <img class="img-thumbnail" src="Resources/assets/Scatter_property_vs_violent_per_100k.png" alt="Prop vs. Vio scatter plot">
+                          </a>
+                        </div>
+                        <div class="col-6">
+                          <a href="Scatter_prop.html">
+                            <img class="img-thumbnail" src="Resources/assets/Scatter_unemployment_rate_vs_property_crime.png" alt="Prop v. unemployment scatter">
+                          </a>
+                        </div>
+                        <div class="col-6">
+                          <a href="Scatter_vio.html">
+                            <img class="img-thumbnail" src="Resources/assets/Scatter_unemployment_rate_vs_violent_crime.png" alt="Vio v. unemployment scatter">
+                          </a>
+                        </div> 
+          </div>
+      </div>
+</div>
+      
+    </div>
+  </div>
+<div class="footer text-center" style="margin-bottom:0">
+    <p>&copy; Copyright Marlene Vasquez 2020</p>
+</div>
+</body>
+</html>
+
+
+
+    
